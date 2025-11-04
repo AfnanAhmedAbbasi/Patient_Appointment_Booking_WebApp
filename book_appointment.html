@@ -2,62 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body
-    style="background-color: #dadada;  display: flex; flex-direction: column; gap: 2vw; justify-content: center; align-items: center;">
-    <div class="main_heading">
-        <div>Book your Appointment under experienced doctors of different fields !</div>
+  style="background-color: #dadada; display: flex; flex-direction: column; gap: 2vw; justify-content: center; align-items: center;">
+  <header>
+    <div class="logo">
+      <img src="./img/logo.png" alt="">
     </div>
-    <div class="bapp_select">
-        <div class="select2">
-            <label for="timeSlot">Select Time Slot:</label>
-            <select id="timeSlot">
-                <option value="">-- Select a Time Slot --</option>
-
-                <optgroup label="MWF (Mon, Wed, Fri)">
-                    <option value="MWF_9AM_11AM">9:00 AM - 11:00 AM</option>
-                    <option value="MWF_7PM_9PM">7:00 PM - 9:00 PM</option>
-                </optgroup>
-
-                <optgroup label="TTS (Tue, Thu, Sat)">
-                    <option value="TTS_9AM_11AM">9:00 AM - 11:00 AM</option>
-                    <option value="TTS_7PM_9PM">7:00 PM - 9:00 PM</option>
-                </optgroup>
-            </select>
-        </div>
+    <div class="menu">
+      <div id="homeLink">Home</div>
+      <div id="book_appiontment_page" class="book_appointment_link">Book-Appointment</div>
+      <div id="appointmentsLink"><a href="./appointments.html">Appointments</a></div>
+      <div id="">Contact us</div>
     </div>
+  </header>
+  <div class="main_heading">
+    <div>Book your Appointment under experienced doctors of different fields!</div>
+  </div>
 
-    <div class="doctor_cards">
-        <div class='doctor_card1'>
-            <div class="doc_image">
-                <img
-                    src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=764' />
-            </div>
-            <div class="doc_info">
-                <div class="doc_name">
-                    Dr.Sarah Khan
-                </div>
-                <div class="doc_kind">Cardiologist</div>
-            </div>
-
-            <div class="doc_info2">
-                <div><span>Experince:</span> 7 years</div>
-                <div><span>Available Days:</span> Mon, Wed</div>
-            </div>
-            <div class="doc_timing">
-                <div><span>Available time tlots:</span></div>
-                <div>Mon,Wed,Fri : 7pm to 9pm</div>
-            </div>
-            <div class="bookapp_btn">
-                <button>Book    Appointment</button>
-            </div>
-        </div>
+  <div class="bapp_select">
+    <div class="select2">
+      <label for="timeSlot">Select Time Slot:</label>
+      <select id="timeSlot">
+        <option value="">-- Select a Time Slot --</option>
+        <optgroup label="MWF (Mon, Wed, Fri)">
+          <option value="MWF_9AM_11AM">9:00 AM - 11:00 AM</option>
+          <option value="MWF_7PM_9PM">7:00 PM - 9:00 PM</option>
+        </optgroup>
+        <optgroup label="TTS (Tue, Thu, Sat)">
+          <option value="TTS_9AM_11AM">9:00 AM - 11:00 AM</option>
+          <option value="TTS_7PM_9PM">7:00 PM - 9:00 PM</option>
+        </optgroup>
+      </select>
     </div>
+  </div>
+
+  <div class="doctor_cards" id="doctorCardsContainer"></div>
+
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Book Appointment</h2>
+      <form id="bookingForm">
+        <label>Doctor Name</label>
+        <input type="text" id="modalDoctorName" readonly />
+
+        <label>Available Day</label>
+        <input type="text" id="modalDoctorDay" readonly />
+
+        <label>Available Time</label>
+        <input type="text" id="modalDoctorTime" readonly />
+
+        <label>Your Name</label>
+        <input type="text" id="userName" placeholder="Enter your full name" required />
+
+        <label>Your Email</label>
+        <input type="email" id="userEmail" placeholder="Enter your email" required />
+
+        <label>Reason for Appointment</label>
+        <textarea id="reason" placeholder="Enter reason" required></textarea>
+
+        <p class="error-msg" id="bookingError"></p>
+        <button type="submit">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById("homeLink").onclick = () => window.location.href = "index.html";
+    document.getElementById("bookAppointmentLink").onclick = () => window.location.href = "book_appointment.html";
+    document.getElementById("appointmentsLink").onclick = () => window.location.href = "appointments.html";
+  </script>
+
+
+
+  <script type="module" src="./js/book_appointment.js"></script>
 </body>
 
 </html>

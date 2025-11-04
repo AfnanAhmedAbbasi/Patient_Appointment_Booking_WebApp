@@ -18,9 +18,9 @@
         </div>
         <div class="menu">
             <div>Home</div>
-            <div id="book_appiontment_page">Book-Appointment</div>
-            <div>Appointments</div>
-            <div>Contact us</div>
+            <div id="book_appiontment_page" class="book_appointment_link">Book-Appointment</div>
+            <div id="appointmentsLink"><a href="./appointments.html">Appointments</a></div>
+            <div id="">Contact us</div>
         </div>
     </header>
     <div class="banner">
@@ -311,7 +311,7 @@
                     <div>Terms of Service</div>
                 </div>
             </div>
-             <div class="f_list1">
+            <div class="f_list1">
                 <div class="f_heading">
                     Features
                 </div>
@@ -322,9 +322,9 @@
                     <div>Terms of Service</div>
                 </div>
             </div>
-             <div class="f_list1">
+            <div class="f_list1">
                 <div class="f_heading">
-                    Resources   
+                    Resources
                 </div>
                 <div class="f_listmenu">
                     <div>Guides</div>
@@ -345,6 +345,38 @@
             </div>
         </div>
     </footer>
+   <div class="modal" id="loginModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Login</h2>
+    <input type="email" placeholder="Email" id="loginEmail" />
+    <input type="password" placeholder="Password" id="loginPassword" />
+    <p class="error-msg" id="loginError"></p>
+    <button id="loginBtn">Login</button>
+    <p>Don’t have an account? <span id="showSignup">Sign Up</span></p>
+  </div>
+</div>
+
+<div class="modal" id="signupModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Sign Up</h2>
+    <input type="text" placeholder="Name" id="signupName" />
+    <input type="email" placeholder="Email" id="signupEmail" />
+    <input type="password" placeholder="Password" id="signupPassword" />
+    <p class="error-msg" id="signupError"></p>
+    <button id="signupBtn">Sign Up</button>
+    <p >Already have an account? <span id="showLogin">Login</span></p>
+  </div>
+</div>
+
+<script>
+        document.getElementById("bookAppointmentLink").onclick = () => window.location.href = "book_appointment.html";
+        document.getElementById("appointmentsLink").onclick = () => window.location.href = "appointments.html";
+    </script>
     <script src="./js/index.js"></script>
+    <script type="module" src="./js/supabase.js"></script>
+    <script type="module" src="./js/authModal.js"></script>
 </body>
+
 </html>
